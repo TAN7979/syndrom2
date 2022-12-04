@@ -11,10 +11,21 @@ public class StatisticsServiceTest {
         StatisticsService service = new StatisticsService();
 
         long[] incomesInBillions = {12, 5, 8, 4, 5, 3, 8, 6, 11, 11, 12};
-        long expected = 12;
+        long expectedMax = 12;
 
-        long actual = service.findMax(incomesInBillions);
+        long actualMax = service.findMax(incomesInBillions);
 
-        assertEquals(expected, actual);
+        assertEquals(expectedMax, actualMax);
+    }
+    @Test
+    void findMaxMax() {
+        StatisticsService service = new StatisticsService();
+
+        long[] incomesInBillions = {12, 5, 8, 20, 5, 3, 8, 6, 11, 11, 12};
+        long expectedMaxMax = 20;
+
+        long actualMaxMax = service.findMax(incomesInBillions);
+
+        assertEquals(expectedMaxMax, actualMaxMax);
     }
 }
